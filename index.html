@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, My Love</title>
+  <style>
+    :root {
+      --bg: linear-gradient(135deg, #f8cdda, #1d2b64);
+      --card: rgba(255, 255, 255, 0.92);
+      --text: #2d1c3b;
+      --accent: #d93d7b;
+      --muted: #5e4d6f;
+      --shadow: 0 16px 50px rgba(18, 8, 44, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 960px;
+      background: var(--card);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      padding: 32px;
+    }
+
+    .header {
+      text-align: center;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(148, 128, 167, 0.25);
+    }
+
+    .header h1 {
+      font-size: clamp(2.8rem, 4vw, 4.5rem);
+      line-height: 1;
+      letter-spacing: 0.04em;
+      color: #4d1a4c;
+    }
+
+    .header p {
+      margin-top: 16px;
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
+    }
+
+    .hero {
+      margin-top: 30px;
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1.15fr 0.85fr;
+    }
+
+    .hero .card {
+      background: rgba(255, 255, 255, 0.94);
+      border-radius: 24px;
+      padding: 28px 32px;
+      box-shadow: 0 22px 45px rgba(38, 15, 72, 0.12);
+    }
+
+    .hero .card h2 {
+      margin-bottom: 18px;
+      font-size: 1.7rem;
+      color: #4d1a4c;
+    }
+
+    .hero .card p {
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    .hero .image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, rgba(217, 61, 123, 0.11), rgba(255, 255, 255, 0.72));
+      border-radius: 30px;
+      min-height: 360px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .image::before {
+      content: '🧡';
+      position: absolute;
+      top: 18px;
+      left: 20px;
+      font-size: 2.6rem;
+      opacity: 0.4;
+    }
+
+    .image span {
+      font-size: 5rem;
+    }
+
+    .section {
+      margin-top: 36px;
+    }
+
+    .section.hidden {
+      display: none;
+    }
+
+    .section h3 {
+      font-size: 1.55rem;
+      margin-bottom: 16px;
+      color: #4d1a4c;
+    }
+
+    .quote-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .quote-item {
+      background: #fdeff8;
+      border-left: 6px solid #d93d7b;
+      padding: 20px 18px;
+      border-radius: 16px;
+      min-height: 140px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .quote-item p {
+      line-height: 1.7;
+      color: #4a3154;
+      font-size: 0.98rem;
+    }
+
+    .quote-item b {
+      display: block;
+      margin-bottom: 10px;
+      color: #922b61;
+    }
+
+    .editable {
+      margin-top: 16px;
+      padding: 18px;
+      border: 1px dashed rgba(141, 60, 103, 0.45);
+      border-radius: 18px;
+      background: rgba(255, 245, 250, 0.9);
+      color: #4e3662;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .editable strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #7b3d6d;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 24px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: none;
+      background: #d93d7b;
+      color: white;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(217, 61, 123, 0.25);
+    }
+
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #6f5d7e;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 820px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero .image {
+        min-height: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="header">
+      <h1>Happy Birthday, My Love</h1>
+      <p>
+        August 22,  will always be a special day because intha world la neee vantha naal thanks to my mamanar and mamiyar for giving you to me oru pick up line "kadavul inoru carbon paper eduthu varajalum en thangatha thirumba kondu vara mudiyathu alagi kutty"
+        Duduuuu, Pondati, Bujuku Bujuku — you are my favorite story, my best friend, and the one I can’t wait to marry.
+      </p>
+    </section>
+
+    <section class="hero">
+      <div class="card">
+        <h2>For the girl who stole my heart</h2>
+        <p>
+          Every moment with you feels like the sweetest song. On your birthday, I want you to know you are cherished,
+          you are beautiful, and my love for you keeps growing every single day.
+        </p>
+        <p>
+          I made this page so you can read the love notes, see the sweet lines, and feel the magic of us together.
+          Our story is the best gift I could ever ask for.
+        </p>
+        <a class="cta" href="#love-quotes">Read the love notes</a>
+      </div>
+      <div class="image">
+        <video controls preload="metadata" playsinline poster="poster.svg" width="100%" style="border-radius: 24px; max-height: 360px; object-fit: cover;">
+          <source src="birthday-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p style="margin-top: 12px; color: #4a3154; font-size: 0.95rem; text-align: center;">
+          If the video does not play, you can <a href="birthday-video.mp4" target="_blank" style="color: #d93d7b; text-decoration: underline;">open it directly</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section hidden" id="love-quotes">
+      <h3>Love Quotes</h3>
+      <div class="quote-grid">
+        <div class="quote-item">
+          <b>�You are my today and all of my tomorrows.�</b>
+          <p>When I look at you, I see everything I�ve ever wanted and every reason to keep dreaming.</p>
+        </div>
+        <div class="quote-item">
+          <b>�Together is my favorite place to be.�</b>
+          <p>With you, every moment feels warm, safe, and beautifully perfect.</p>
+        </div>
+        <div class="quote-item">
+          <b>�My heart is perfect because you are inside.�</b>
+          <p>Every beat belongs to you, and every breath is grateful for your love.</p>
+        </div>
+        <div class="quote-item">
+          <b>�I choose you. And I�ll choose you over and over.�</b>
+          <p>No matter where life takes us, my answer will always be you.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hidden">
+      <h3>Sweet Pickup Lines</h3>
+      <div class="quote-grid">
+        <div class="quote-item">
+          <p>Is your smile a time machine? Because every time I see it, I�m taken to a future where we�re always together.</p>
+        </div>
+        <div class="quote-item">
+          <p>I must be a snowflake, because I�ve fallen for you and I only want to melt into your arms.</p>
+        </div>
+        <div class="quote-item">
+          <p>If kisses were stars, I�d give you the sky � and I still wouldn�t have enough to show all the ways I love you.</p>
+        </div>
+        <div class="quote-item">
+          <p>Do you believe in fate? Because meeting you feels like the universe finally gave me the life I dreamed of.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hidden">
+      <h3>Write Your Own Love Paragraph</h3>
+      <div class="editable">
+        <strong>Personal message for my lovable pondati :</strong>
+        <p>
+          Duduuuu, every moment with you feels like a dream made real.
+          Your laugh is the song I want to hear for the rest of my life,
+          and your love is the safe place where I can be myself.
+        </p>
+        <p>
+          Pondati, you make even the simplest day shine brighter.
+          Bujuku Bujuku, I promise to cherish you, to protect our happiness,
+          and to build a beautiful future with you by my side.
+        </p>
+        <p>
+          Yours lovingly,
+          <br />
+          Badrinath AshinRinisha
+        </p>
+      </div>
+    </section>
+
+    <section class="footer hidden">
+      <p>
+        To share this page, send the file or host it on a simple web hosting platform and give her the link.
+        Happy birthday to the one who makes every day feel like a dream.
+      </p>
+    </section>
+  </main>
+  <script>
+    function showLoveNotes() {
+      document.querySelectorAll('.hidden').forEach(function(el) {
+        el.classList.remove('hidden');
+      });
+      var target = document.getElementById('love-quotes');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var button = document.querySelector('.cta');
+      if (button) {
+        button.addEventListener('click', function(event) {
+          event.preventDefault();
+          showLoveNotes();
+        });
+      }
+
+      if (window.location.hash === '#love-quotes') {
+        showLoveNotes();
+      }
+    });
+  </script>
+</body>
+</html>
